@@ -14,7 +14,7 @@ RUN apt-get update && \
     add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian stretch stable" && \
     add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian stretch stable" && \
     apt-get update && \
-    apt-get install -qq -y --no-install-recommends docker-cec2c4c6fda741c197149dfac6e028e523419091a37a5802fa9a26dc840fc4a38a && \
+    apt-get install -qq -y --no-install-recommends docker-ce && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN curl -fsSL https://baltocdn.com/helm/signing.asc | apt-key add - && \
