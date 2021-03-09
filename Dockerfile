@@ -22,7 +22,7 @@ RUN apt-get update && \
     chmod +x /usr/local/bin/docker-compose && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN curl https://baltocdn.com/helm/signing.asc | sudo apt-key add - && \
-    echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list && \
+RUN curl -fsSL https://baltocdn.com/helm/signing.asc | apt-key add - && \
+    echo "deb https://baltocdn.com/helm/stable/debian/ all main" > /etc/apt/sources.list.d/helm-stable-debian.list && \
     apt-get update && \
     apt-get install helm
