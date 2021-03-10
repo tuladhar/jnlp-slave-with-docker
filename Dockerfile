@@ -21,3 +21,7 @@ RUN curl -fsSL https://baltocdn.com/helm/signing.asc | apt-key add - && \
     echo "deb https://baltocdn.com/helm/stable/debian/ all main" > /etc/apt/sources.list.d/helm-stable-debian.list && \
     apt-get update && \
     apt-get install helm
+    
+RUN curl -LO "https://storage.googleapis.com/kubernetes-release/release/v1.20.4/bin/linux/amd64/kubectl" && \
+    chmod +x ./kubectl && \
+    mv ./kubectl /usr/local/bin/kubectl
